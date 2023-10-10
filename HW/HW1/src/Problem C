@@ -1,0 +1,16 @@
+int n = 3;
+int m = 4;
+int result = n * (++m);
+
+int n = 3;
+int m = 4;
+int result = n * (m++);
+
+
+These two segments of code do NOT produce the same output. The first
+segment will increment m from 4 to 5 BEFORE computing 'result'.
+In that case, result will be 3*5 = 15.
+
+The second segment of code will also increment m, but only after
+result is computed. This means result will be 3*4 = 12.
+In both cases, n ends up as 3, and m ends up as 5.
